@@ -1,0 +1,130 @@
+body {
+	background: aquamarine;
+	transition: .6s;
+}
+
+#winScreen {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	transition: background .4s;
+	overflow-y: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#winScreen p {
+	color: aquamarine;
+	font-size: 40px;
+	transform: translateY(-70vh);
+	user-select: none;
+	animation: textDrop 2s;
+}
+
+#intro, #game {
+	width: 95%;
+	text-align: center;
+	margin: 10px auto 0 auto;
+	border: 1px solid black;
+	border-radius: 20px;
+	background: linear-gradient(rgba(70%, 70%, 70%, .2), rgba(70%, 70%, 70%, .3));
+	box-shadow: 2px 2px 1px gray;
+}
+
+
+#game {
+	min-height: 450px;
+	margin-bottom: 10px;
+}
+
+#settings {
+	font-size: 22px;
+	background: rgba(0, 0, 0, .2);
+	width: 300px;
+	margin: 20px auto;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+#settings button {
+	width: 60px;
+	height: 26px;
+}
+
+#play-area {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+label {
+	
+    -webkit-perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    width: 13%;
+    margin: 1px;
+    height: 17vh;
+
+}
+
+.card {
+  
+    position: relative;
+    height: 100%;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 20;
+}
+
+    .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: green;
+        text-align: center;
+        line-height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 2px;
+    }
+
+    .card .back {
+        background: #222;
+        color: red;
+        font-size: 100px;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+
+label input {
+    display: none;
+}
+
+.card.flipped {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+
+
+
+@keyframes textDrop {
+	0% {
+		transform: translateY(70vh);
+	}
+	10% {
+		transform: translateY(12vh);
+	}
+	90% {
+		transform: translateY(-12vh);
+	}
+	100% {
+		transform: translateY(-110vh);
+	}
+}
